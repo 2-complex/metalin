@@ -7,11 +7,11 @@ In the repo, you will find `lingen.py` which is a python script which generates 
 
 	python lingen.py
 
-You will also see `test.cpp`, which includes `lin.h` and uses it.  In the `makefile`, you will see that the test depends on `lin.h` which in turn, depends on the python script.  If you build, by typing:
+You will also see `test.cpp`, which includes `lin.h` and uses it.  In the `makefile`, the test depends on `lin.h` which in turn, depends on the python script.  If you build, by typing:
 
 	make test
 
-Make will run the python script to generate `lin.h`, directing standard out from lingen.py into `lin.h`
+Make will run the python script to generate `lin.h`, and then build the test using c++:
 	
 	$ make test
 	touch lin.h; rm lin.h; python lingen.py >> lin.h
